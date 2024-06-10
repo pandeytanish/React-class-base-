@@ -15,22 +15,50 @@ const getLocalItems = () => {
 function Tast() {
     const [inputData,setInputData] = useState('')
     const [items,setItems] = useState(getLocalItems())
+    const [toggleSubmit,setToggleSubmit] = useState(true)
+    const[isEditItem,setISEditItem] = useState(null)
     const addItem = () => {
         if(!inputData) {
+            alert("plesee enter data")
         }
+        else if (inputData && !toggleSubmit) {
+            setItems (
+                items.map ((elem) => {
+                    if(elem.id === isEditItem){
+                        return {...elem,name: inputData}
+                    }
+                   return  elem
+                })
+            )
+
+        }
+
          else {
-           setItems([...items,inputData])
+            const allInputData = {id : new Date().getTime().toString(),name : inputData}
+           setItems([...items,allInputData])
            setInputData('')
          }
     }
-    const deleteItem = (id) => {
-         const updatedData = items.filter((elem,ind)=> {
-            return ind !== id ;
+    const deleteItem = (index) => {
+         const updatedData = items.filter((elem)=> {
+            return index !== elem.id ;
          }) ;
          setItems(updatedData)
     }
     const removeAll = () => {
         setItems([])
+    }
+
+    const editItem = (id) => {
+        let newEditItem = items.find((elem) => {
+            return elem.id === id
+        });
+        console.log(newEditItem)
+
+        setToggleSubmit(false)
+        setInputData(newEditItem.name)
+
+        setISEditItem(null)
     }
 
     useEffect (() => {
@@ -46,18 +74,23 @@ function Tast() {
 
 <div>
     <input value={inputData} onChange={(e) => setInputData(e.target.value)} type='text' placeholder='add todo '/> 
-    <button onClick={addItem}>Add item</button>
+      {
+          toggleSubmit ?   <button onClick={addItem}>Add item</button> :
+          <button onClick={addItem}>Add item</button>
+        
+      }
 </div>
 <div>
     {/* <h3>Apple</h3> */}
 </div>
 <div>
     {
-        items.map((elem,ind) => {
+        items.map((elem) => {
              return (
-                <div key={ind}>
-                    <h2>{elem}</h2>
-<button onClick={() => deleteItem(ind)}>Delete</button>
+                <div key={elem.id}>
+                    <h2>{elem.name}</h2>
+<button onClick={() => deleteItem(elem.id)}>Delete</button>
+<button onClick={() => editItem(elem.id)}>edit</button>
                 </div>
              )
         })
