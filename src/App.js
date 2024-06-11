@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 // import Counter from './Counter'
 // import ComponentDidMount from './ComPonents/Life Cycle Methods/ComponentDidMount'
-// import ComponenDidUpdate from './ComPonents/Life Cycle Methods/ComponenDidUpdate'
+import ComponenDidUpdate from './ComPonents/Life Cycle Methods/ComponenDidUpdate'
 // import Todo from './Todo'
 import Tast from './Tast'
+import ShouldComponentUpdate from './ComPonents/Life Cycle Methods/ShouldComponentUpdate'
+import ComponentWillUnmount from './ComPonents/Life Cycle Methods/ComponentWillUnmount'
+
+
 
 export default class App extends Component {
   render() {
@@ -15,7 +19,12 @@ export default class App extends Component {
         {/* <ComponentDidMount/> */}
         {/* <ComponenDidUpdate/> */}
         {/* <Todo/> */}
-        <Tast/>
+        {/* <Tast/> */}
+        {/* <ShouldComponentUpdate/> */}
+        <ComponentWillUnmount/>
+        
+        
+      
 
       </div>
     )
