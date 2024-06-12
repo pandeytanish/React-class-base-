@@ -8,6 +8,11 @@ export default class Student extends Component {
     return (
       <div>
         <h1>Studenet Component</h1>
+        <h1>Studenet Component</h1>
+        <h1>Studenet Component</h1>
+        <h1>Studenet Component</h1>
+        
+
       </div>
     )
   }
