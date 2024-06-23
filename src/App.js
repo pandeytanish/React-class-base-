@@ -6,6 +6,7 @@ import ComponenDidUpdate from './ComPonents/Life Cycle Methods/ComponenDidUpdate
 import Tast from './Tast'
 import ShouldComponentUpdate from './ComPonents/Life Cycle Methods/ShouldComponentUpdate'
 import ComponentWillUnmount from './ComPonents/Life Cycle Methods/ComponentWillUnmount'
+import Counter from './ComPonents/Counter/Counter'
 
 
 
@@ -21,7 +22,8 @@ export default class App extends Component {
         {/* <Todo/> */}
         {/* <Tast/> */}
         {/* <ShouldComponentUpdate/> */}
-        <ComponentWillUnmount/>
+        {/* <ComponentWillUnmount/> */}
+        <Counter/>
         
         
       

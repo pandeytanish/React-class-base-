@@ -4,7 +4,7 @@ export default class ClassProps extends Component {
   render() {
     return (
       <div>
-        <h1>hello {this.props.name}</h1>
+        <h1>Hello {this.props.name}</h1>
       </div>
     )
   }
