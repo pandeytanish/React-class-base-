@@ -7,6 +7,7 @@ import Tast from './Tast'
 import ShouldComponentUpdate from './ComPonents/Life Cycle Methods/ShouldComponentUpdate'
 import ComponentWillUnmount from './ComPonents/Life Cycle Methods/ComponentWillUnmount'
 import Counter from './ComPonents/Counter/Counter'
+import TodoJest from './TodoJest'
 
 
 
@@ -23,7 +24,8 @@ export default class App extends Component {
         {/* <Tast/> */}
         {/* <ShouldComponentUpdate/> */}
         {/* <ComponentWillUnmount/> */}
-        <Counter/>
+        {/* <Counter/> */}
+        <TodoJest/>
         
         
       
