@@ -14,7 +14,7 @@ describe('TodoJest Component', () => {
 
   test('should handle input change', () => {
     wrapper.find('input[name="task"]').simulate('change', {
-      target: { name: 'task', value: 'todo list' },
+      // target: { name: 'task', value: 'todo list' },
     });
     expect(wrapper.find('input[name="task"]').prop('value')).toBe('todo list');
   });
